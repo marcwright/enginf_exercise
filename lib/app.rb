@@ -25,7 +25,7 @@ class App < Sinatra::Application
     dailyArray = response["daily"]["data"]
     newDailyArray = dailyArray.map {|day| 
       { 
-        date: day["time"], 
+        date: Time.at(day["time"]).strftime("%Y-%m-%d"), 
         type: day["icon"],
         description: day["summary"],
         temperature: {
@@ -34,20 +34,18 @@ class App < Sinatra::Application
         }
       } 
     }
-
-    puts newDailyArray
     
     {
-      "date": response['currently'],
-      "type": response['currently']['icon'],
-      "description": response['currently']['summary'],
-      "temperature": response['currently']['temperature'],
-      "wind": {
-        "speed": response['currently']['windSpeed'],
-        "bearing": response['currently']['windBearing']
+      date: Time.at(response['currently']['time']).strftime("%Y-%m-%d"),
+      type: response['currently']['icon'],
+      description: response['currently']['summary'],
+      temperature: response['currently']['temperature'],
+      wind: {
+        speed: response['currently']['windSpeed'],
+        bearing: response['currently']['windBearing']
       },
-      "precip_prob": response['currently']['precipProbability'],
-      "daily": newDailyArray
+      precip_prob: response['currently']['precipProbability'],
+      daily: newDailyArray
     }.to_json
   end
 end
