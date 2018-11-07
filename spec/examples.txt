@@ -1,0 +1,4 @@
+example_id                          | status | run_time        |
+----------------------------------- | ------ | --------------- |
+./spec/lib/weather_spec.rb[1:1:1:1] | passed | 0.00111 seconds |
+./spec/lib/weather_spec.rb[1:1:2:1] | failed | 0.92904 seconds |
