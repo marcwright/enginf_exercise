@@ -12,6 +12,7 @@ GEM
     rack (2.0.6)
     rack-protection (2.0.4)
       rack
+    rake (12.3.1)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
       rspec-expectations (~> 3.8.0)
@@ -43,6 +44,7 @@ DEPENDENCIES
   httparty
   json
   puma
+  rake
   rspec
   shotgun
   sinatra
