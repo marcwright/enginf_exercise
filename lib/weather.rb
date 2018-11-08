@@ -2,7 +2,7 @@ require 'httparty'
 
 class Weather
   def demo
-    "demo"
+    "de"
   end
 
   def self.apiDarkSkies(lat, lon)
