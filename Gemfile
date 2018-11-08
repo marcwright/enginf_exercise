@@ -7,6 +7,7 @@ gem 'rspec'
 gem 'json'
 gem 'httparty'
 gem 'dotenv'
+gem 'bundler'
 
 group :development do
   gem 'shotgun'
