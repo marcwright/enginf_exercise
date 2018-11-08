@@ -10,5 +10,4 @@ gem 'dotenv'
 
 group :development do
   gem 'shotgun'
-  gem 'dotenv'
 end

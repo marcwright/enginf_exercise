@@ -1,16 +1,20 @@
 require 'httparty'
-require 'dotenv/load'
 
 class Weather
   def demo
     "demo"
   end
 
-  def self.getWeather(lat, lon)
+  def self.apiDarkSkies(lat, lon)
     api_key = ENV['DARK_SKIES_API_KEY']
 
     response = HTTParty.get("https://api.darksky.net/forecast/#{api_key}/#{lat},#{lon}?exclude=offset,flags,hourly,minutely,timezone,latitude,longitude,timezone")
-      puts response
+    response
+  end
+
+  def self.getWeather(lat, lon)
+      response = self.apiDarkSkies(lat, lon)
+    
       dailyArray = response["daily"]["data"]
       newDailyArray = dailyArray.map {|day| 
         { 
