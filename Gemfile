@@ -9,7 +9,13 @@ gem 'httparty'
 gem 'dotenv'
 gem 'bundler'
 gem 'rake'
+gem 'travis'
 
-group :development do
+group :production do
   gem 'shotgun'
+end
+
+group :development,:test do
+  gem 'rspec'
+  gem 'rack-test'
 end
