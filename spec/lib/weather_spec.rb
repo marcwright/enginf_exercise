@@ -29,10 +29,6 @@ RSpec.describe Weather do
       it 'has a timezone field' do 
         expect(@obj.has_key?("wind")).to eq(true)
       end
-
-      it 'fucks yourself' do
-        raise
-      end
     end 
   end
 
